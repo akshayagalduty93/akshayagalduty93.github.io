@@ -13,6 +13,10 @@
       font-family: Arial, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       background: #f4f6f8;
       color: #222;
@@ -22,38 +26,42 @@
     header {
       background: #0f172a;
       color: white;
-      padding: 60px 20px;
+      padding: 70px 20px;
       text-align: center;
     }
 
     .profile-photo {
-      width: 170px;
-      height: 170px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
+      object-position: center;
       border: 5px solid white;
-      margin-bottom: 20px;
+      margin-bottom: 22px;
       background: #e2e8f0;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
 
     .profile-fallback {
-      width: 170px;
-      height: 170px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       border: 5px solid white;
-      margin: 0 auto 20px;
+      margin: 0 auto 22px;
       background: #2563eb;
       color: white;
       display: none;
       align-items: center;
       justify-content: center;
-      font-size: 48px;
+      font-size: 52px;
       font-weight: bold;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
     }
 
     header h1 {
-      font-size: 38px;
+      font-size: 40px;
       margin-bottom: 10px;
+      letter-spacing: 1px;
     }
 
     header p {
@@ -67,10 +75,14 @@
       margin-top: 10px;
       background: #2563eb;
       color: white;
-      padding: 10px 16px;
+      padding: 11px 18px;
       border-radius: 8px;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    .button:hover {
+      background: #1d4ed8;
     }
 
     nav {
@@ -90,14 +102,18 @@
       font-weight: bold;
     }
 
+    nav a:hover {
+      color: #2563eb;
+    }
+
     section {
       max-width: 1000px;
-      margin: 40px auto;
+      margin: 45px auto;
       padding: 0 20px;
     }
 
     h2 {
-      font-size: 28px;
+      font-size: 30px;
       margin-bottom: 20px;
       color: #0f172a;
     }
@@ -153,6 +169,10 @@
       font-weight: bold;
     }
 
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       padding: 30px;
@@ -160,16 +180,32 @@
       color: white;
       margin-top: 50px;
     }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 32px;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px;
+      }
+
+      .profile-photo,
+      .profile-fallback {
+        width: 150px;
+        height: 150px;
+      }
+    }
   </style>
 </head>
 
 <body>
 
   <header>
-    <!-- Profile image: supports profile.jpg, profile.png, profile.jpeg, profile.JPG, profile.PNG -->
-    <img 
+    <img
       id="profileImage"
-      src="profile.jpg?v=20"
+      src="./profile.jpg?v=1000"
       alt="Akshay Agalduty"
       class="profile-photo"
     />
@@ -386,34 +422,16 @@
   </section>
 
   <footer>
-    <p>© 2026 Akshay Agsalduty | Business Analyst Portfolio</p>
+    <p>© 2026 Akshay Agalduty | Business Analyst Portfolio</p>
   </footer>
 
   <script>
-    const image = document.getElementById("profileImage");
-    const fallback = document.getElementById("profileFallback");
+    const profileImage = document.getElementById("profileImage");
+    const profileFallback = document.getElementById("profileFallback");
 
-    const possibleImages = [
-      "profile.jpg?v=20",
-      "profile.png?v=20",
-      "profile.jpeg?v=20",
-      "profile.JPG?v=20",
-      "profile.PNG?v=20",
-      "Profile.jpg?v=20",
-      "Profile.png?v=20"
-    ];
-
-    let currentImageIndex = 0;
-
-    image.onerror = function () {
-      currentImageIndex++;
-
-      if (currentImageIndex < possibleImages.length) {
-        image.src = possibleImages[currentImageIndex];
-      } else {
-        image.style.display = "none";
-        fallback.style.display = "flex";
-      }
+    profileImage.onerror = function () {
+      profileImage.style.display = "none";
+      profileFallback.style.display = "flex";
     };
   </script>
 
