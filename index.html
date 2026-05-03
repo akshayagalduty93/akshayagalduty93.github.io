@@ -64,6 +64,7 @@
       box-shadow: 0 2px 6px rgba(0,0,0,0.08);
       position: sticky;
       top: 0;
+      z-index: 10;
     }
 
     nav a {
@@ -107,13 +108,31 @@
       margin-bottom: 10px;
     }
 
-    .project a {
+    .project p {
+      margin-bottom: 12px;
+    }
+
+    .project ul {
+      margin: 8px 0 18px 22px;
+    }
+
+    .project li {
+      margin-bottom: 6px;
+    }
+
+    .tag {
       display: inline-block;
-      margin-top: 12px;
-      background: #2563eb;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 8px;
+      background: #dbeafe;
+      color: #1d4ed8;
+      padding: 6px 10px;
+      border-radius: 20px;
+      font-size: 13px;
+      margin: 5px 5px 0 0;
+      font-weight: bold;
+    }
+
+    .contact-link {
+      color: #2563eb;
       text-decoration: none;
       font-weight: bold;
     }
@@ -131,7 +150,6 @@
 <body>
 
   <header>
-    <!-- 🔥 PROFILE IMAGE -->
     <img src="profile.jpg" alt="Akshay Agsalduty" class="profile-photo"/>
 
     <h1>AKSHAY AGSALDUTY</h1>
@@ -151,9 +169,10 @@
     <h2>About Me</h2>
     <div class="card">
       <p>
-        I am an aspiring Business Analyst focused on requirements gathering,
-        process improvement, and data-driven decision making. I am passionate
-        about solving real-world business problems and building impactful solutions.
+        I am an aspiring Business Analyst and entrepreneur based in Melbourne, focused on
+        requirements gathering, process improvement, stakeholder communication, and data-driven
+        decision making. I enjoy understanding real business problems and turning them into clear,
+        practical solutions.
       </p>
     </div>
   </section>
@@ -163,8 +182,11 @@
     <div class="card skills">
       <span>Requirements Gathering</span>
       <span>User Stories</span>
+      <span>Acceptance Criteria</span>
       <span>Agile / Scrum</span>
       <span>Process Mapping</span>
+      <span>Business Process Improvement</span>
+      <span>Stakeholder Communication</span>
       <span>SQL Basics</span>
       <span>Excel</span>
       <span>Power BI</span>
@@ -175,21 +197,157 @@
     <h2>Projects</h2>
 
     <div class="card project">
-      <h3>1. Rideshare Driver Income Analysis</h3>
-      <p>
-        Analysed income patterns, downtime, and operational inefficiencies.
-        Identified opportunities to improve earnings and utilization.
+      <h3>1. Rideshare Driver Income Optimization Analysis</h3>
+
+      <p><strong>Problem:</strong><br>
+        Rideshare drivers often experience inconsistent income because of downtime, inefficient shift planning,
+        peak-hour dependency, changing demand zones, fuel costs, and limited visibility into earning patterns.
       </p>
-      <p><strong>Artifacts:</strong> KPI Analysis, Business Case</p>
+
+      <p><strong>Objective:</strong><br>
+        Identify the key factors affecting driver income and recommend process improvements to increase
+        daily earnings, reduce idle time, and improve utilization.
+      </p>
+
+      <p><strong>BA Approach:</strong></p>
+      <ul>
+        <li>Analysed income patterns across weekdays and weekends.</li>
+        <li>Compared active driving time against waiting or idle time.</li>
+        <li>Identified high-demand time windows and lower-value driving periods.</li>
+        <li>Reviewed operational costs such as fuel, repairs, platform fees, and downtime.</li>
+        <li>Defined KPIs to measure income performance and efficiency.</li>
+      </ul>
+
+      <p><strong>Key Insights:</strong></p>
+      <ul>
+        <li>Weekend and peak-hour dependency can create unstable weekly earnings.</li>
+        <li>Idle time directly reduces earnings per hour.</li>
+        <li>Driving in low-demand areas increases waiting time and operational cost.</li>
+        <li>Better shift planning can improve consistency without increasing total work hours.</li>
+      </ul>
+
+      <p><strong>KPIs Defined:</strong></p>
+      <ul>
+        <li>Daily Earnings in AUD</li>
+        <li>Earnings per Hour</li>
+        <li>Utilization Rate</li>
+        <li>Idle Time per Shift</li>
+        <li>Fuel Cost as a Percentage of Earnings</li>
+      </ul>
+
+      <p><strong>Recommendations:</strong></p>
+      <ul>
+        <li>Plan shifts around high-demand time windows instead of fixed hours.</li>
+        <li>Track earnings per hour to compare profitable and non-profitable shifts.</li>
+        <li>Reduce idle time by choosing stronger demand zones.</li>
+        <li>Use weekly performance tracking to improve driving strategy.</li>
+      </ul>
+
+      <p><strong>Outcome:</strong><br>
+        Proposed a data-driven shift planning approach that can improve income consistency,
+        reduce wasted time, and support better decision making for rideshare drivers in Melbourne.
+      </p>
+
+      <p>
+        <span class="tag">Business Case</span>
+        <span class="tag">KPI Analysis</span>
+        <span class="tag">Process Improvement</span>
+        <span class="tag">Data-Driven Decision Making</span>
+      </p>
     </div>
 
     <div class="card project">
-      <h3>2. Login System Requirements Analysis</h3>
-      <p>
-        Created functional and non-functional requirements, user stories,
-        and system flow for a login system.
+      <h3>2. Login System Requirements & User Flow Analysis</h3>
+
+      <p><strong>Problem:</strong><br>
+        Users may face login failures, unclear error messages, and poor account recovery options,
+        which can lead to frustration, support requests, and user drop-off.
       </p>
-      <p><strong>Artifacts:</strong> BRD, User Stories</p>
+
+      <p><strong>Objective:</strong><br>
+        Define clear requirements for a simple, secure, and user-friendly login experience.
+      </p>
+
+      <p><strong>Functional Requirements:</strong></p>
+      <ul>
+        <li>User can log in using email and password.</li>
+        <li>User can reset password using the forgot password option.</li>
+        <li>System validates required fields before submission.</li>
+        <li>System displays clear error messages for invalid login attempts.</li>
+      </ul>
+
+      <p><strong>Non-Functional Requirements:</strong></p>
+      <ul>
+        <li>Login response time should be under 2 seconds.</li>
+        <li>User credentials should be handled securely.</li>
+        <li>The page should work on desktop and mobile devices.</li>
+        <li>The system should be reliable and available during peak usage.</li>
+      </ul>
+
+      <p><strong>User Story:</strong><br>
+        <em>As a registered user, I want to log in securely so that I can access my account without issues.</em>
+      </p>
+
+      <p><strong>Acceptance Criteria:</strong></p>
+      <ul>
+        <li>Given valid credentials, when the user clicks login, then the user is redirected to the dashboard.</li>
+        <li>Given invalid credentials, when the user clicks login, then a clear error message is displayed.</li>
+        <li>Given a forgotten password, when the user requests reset, then a reset link is sent to the registered email.</li>
+      </ul>
+
+      <p><strong>Outcome:</strong><br>
+        Created a clear requirement structure that improves usability, reduces login confusion,
+        and supports better communication between business stakeholders and developers.
+      </p>
+
+      <p>
+        <span class="tag">BRD</span>
+        <span class="tag">User Stories</span>
+        <span class="tag">Acceptance Criteria</span>
+        <span class="tag">Functional Requirements</span>
+      </p>
+    </div>
+
+    <div class="card project">
+      <h3>3. Customer Support Process Improvement</h3>
+
+      <p><strong>Problem:</strong><br>
+        Support tickets can reopen after closure when the root cause is not fully resolved,
+        communication is unclear, or closure criteria are not properly defined.
+      </p>
+
+      <p><strong>Objective:</strong><br>
+        Improve the support workflow to reduce reopened tickets, improve SLA tracking,
+        and create a clearer resolution process for users and support teams.
+      </p>
+
+      <p><strong>BA Approach:</strong></p>
+      <ul>
+        <li>Reviewed the current support ticket lifecycle from creation to closure.</li>
+        <li>Identified possible reasons for ticket reopening.</li>
+        <li>Defined clearer closure criteria and user confirmation steps.</li>
+        <li>Suggested improvement areas for tracking, communication, and escalation.</li>
+      </ul>
+
+      <p><strong>Recommendations:</strong></p>
+      <ul>
+        <li>Add mandatory resolution notes before closing tickets.</li>
+        <li>Introduce user confirmation for selected ticket categories.</li>
+        <li>Track reopened tickets as a separate KPI.</li>
+        <li>Create escalation rules for repeated issues.</li>
+      </ul>
+
+      <p><strong>Outcome:</strong><br>
+        Proposed a more structured support process to improve service quality,
+        reduce repeated work, and increase customer satisfaction.
+      </p>
+
+      <p>
+        <span class="tag">AS-IS / TO-BE</span>
+        <span class="tag">Root Cause Analysis</span>
+        <span class="tag">Workflow Improvement</span>
+        <span class="tag">SLA Tracking</span>
+      </p>
     </div>
 
   </section>
@@ -197,9 +355,9 @@
   <section id="contact">
     <h2>Contact</h2>
     <div class="card">
-      <p><strong>Email:</strong> akshayagalduty93@gmail.com</p>
-      <p><strong>LinkedIn:</strong> www.linkedin.com/in/akshayagalduty21</p>
-      <p><strong>GitHub:</strong> github.com/akshayagalduty93</p>
+      <p><strong>Email:</strong> <a class="contact-link" href="mailto:akshayagalduty93@gmail.com">akshayagalduty93@gmail.com</a></p>
+      <p><strong>LinkedIn:</strong> <a class="contact-link" href="https://www.linkedin.com/in/akshayagalduty21" target="_blank">www.linkedin.com/in/akshayagalduty21</a></p>
+      <p><strong>GitHub:</strong> <a class="contact-link" href="https://github.com/akshayagalduty93" target="_blank">github.com/akshayagalduty93</a></p>
     </div>
   </section>
 
