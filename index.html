@@ -27,12 +27,28 @@
     }
 
     .profile-photo {
-      width: 160px;
-      height: 160px;
+      width: 170px;
+      height: 170px;
       border-radius: 50%;
       object-fit: cover;
-      border: 4px solid white;
+      border: 5px solid white;
       margin-bottom: 20px;
+      background: #e2e8f0;
+    }
+
+    .profile-fallback {
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin: 0 auto 20px;
+      background: #2563eb;
+      color: white;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      font-weight: bold;
     }
 
     header h1 {
@@ -150,7 +166,15 @@
 <body>
 
   <header>
-    <img src="profile.jpg" alt="Akshay Agalduty" class="profile-photo"/>
+    <!-- Profile image: supports profile.jpg, profile.png, profile.jpeg, profile.JPG, profile.PNG -->
+    <img 
+      id="profileImage"
+      src="profile.jpg?v=20"
+      alt="Akshay Agsalduty"
+      class="profile-photo"
+    />
+
+    <div id="profileFallback" class="profile-fallback">AA</div>
 
     <h1>AKSHAY AGSALDUTY</h1>
     <p>Aspiring Business Analyst & Entrepreneur | Melbourne</p>
@@ -364,6 +388,34 @@
   <footer>
     <p>© 2026 Akshay Agsalduty | Business Analyst Portfolio</p>
   </footer>
+
+  <script>
+    const image = document.getElementById("profileImage");
+    const fallback = document.getElementById("profileFallback");
+
+    const possibleImages = [
+      "profile.jpg?v=20",
+      "profile.png?v=20",
+      "profile.jpeg?v=20",
+      "profile.JPG?v=20",
+      "profile.PNG?v=20",
+      "Profile.jpg?v=20",
+      "Profile.png?v=20"
+    ];
+
+    let currentImageIndex = 0;
+
+    image.onerror = function () {
+      currentImageIndex++;
+
+      if (currentImageIndex < possibleImages.length) {
+        image.src = possibleImages[currentImageIndex];
+      } else {
+        image.style.display = "none";
+        fallback.style.display = "flex";
+      }
+    };
+  </script>
 
 </body>
 </html>
