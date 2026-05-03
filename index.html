@@ -24,7 +24,6 @@
       --text: #f5ece8;
       --muted: #b09090;
       --gradient: linear-gradient(135deg, #ff6b2b, #e8273a);
-      --gradient-soft: linear-gradient(135deg, rgba(255,107,43,0.15), rgba(232,39,58,0.15));
     }
 
     html { scroll-behavior: smooth; }
@@ -37,12 +36,10 @@
       overflow-x: hidden;
     }
 
-    /* ── SCROLLBAR ── */
     ::-webkit-scrollbar { width: 6px; }
     ::-webkit-scrollbar-track { background: var(--dark); }
     ::-webkit-scrollbar-thumb { background: var(--gradient); border-radius: 10px; }
 
-    /* ── CANVAS BACKGROUND ── */
     #bgCanvas {
       position: fixed;
       top: 0; left: 0;
@@ -51,7 +48,6 @@
       pointer-events: none;
     }
 
-    /* ── NAV ── */
     nav {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -105,7 +101,6 @@
     .nav-links a:hover { color: var(--text); }
     .nav-links a:hover::after { width: 100%; }
 
-    /* ── HERO ── */
     header {
       position: relative;
       z-index: 1;
@@ -302,7 +297,6 @@
       transform: translateY(-2px);
     }
 
-    /* ── SCROLL INDICATOR ── */
     .scroll-indicator {
       position: absolute;
       bottom: 30px;
@@ -328,7 +322,6 @@
       50% { transform: translateX(-50%) translateY(8px); }
     }
 
-    /* ── SECTION BASE ── */
     section {
       position: relative;
       z-index: 1;
@@ -368,7 +361,6 @@
       margin-bottom: 48px;
     }
 
-    /* ── REVEAL ANIMATION ── */
     .reveal {
       opacity: 0;
       transform: translateY(40px);
@@ -380,18 +372,6 @@
       transform: translateY(0);
     }
 
-    .reveal-left {
-      opacity: 0;
-      transform: translateX(-40px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
-    }
-
-    .reveal-left.visible {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-    /* ── ABOUT ── */
     .about-card {
       background: var(--card);
       border: 1px solid rgba(255,107,43,0.1);
@@ -415,11 +395,8 @@
       line-height: 1.9;
     }
 
-    .about-card p strong {
-      color: var(--text);
-    }
+    .about-card p strong { color: var(--text); }
 
-    /* ── STATS ── */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -456,7 +433,6 @@
       margin-top: 4px;
     }
 
-    /* ── SKILLS ── */
     .skills-grid {
       display: flex;
       flex-wrap: wrap;
@@ -489,7 +465,6 @@
     }
 
     .skill-tag span { position: relative; z-index: 1; }
-
     .skill-tag:hover::before { opacity: 1; }
     .skill-tag:hover {
       border-color: transparent;
@@ -497,7 +472,6 @@
       box-shadow: 0 8px 20px rgba(255,107,43,0.3);
     }
 
-    /* ── PROJECT CARDS ── */
     .project-card {
       background: var(--card);
       border: 1px solid rgba(255,107,43,0.1);
@@ -521,7 +495,6 @@
     }
 
     .project-card:hover::before { transform: scaleX(1); }
-
     .project-card:hover {
       transform: translateY(-6px);
       border-color: rgba(255,107,43,0.3);
@@ -555,9 +528,7 @@
       background-clip: text;
     }
 
-    .info-block {
-      margin-bottom: 20px;
-    }
+    .info-block { margin-bottom: 20px; }
 
     .info-label {
       font-size: 11px;
@@ -583,12 +554,9 @@
     .info-block li {
       margin-bottom: 6px;
       line-height: 1.7;
-      position: relative;
     }
 
-    .info-block li::marker {
-      color: var(--orange);
-    }
+    .info-block li::marker { color: var(--orange); }
 
     .tags-row {
       display: flex;
@@ -615,7 +583,6 @@
       transform: translateY(-2px);
     }
 
-    /* ── CONTACT ── */
     .contact-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -662,7 +629,6 @@
       word-break: break-word;
     }
 
-    /* ── FOOTER ── */
     footer {
       position: relative;
       z-index: 1;
@@ -681,7 +647,6 @@
       font-weight: 700;
     }
 
-    /* ── MOBILE ── */
     @media (max-width: 700px) {
       nav { padding: 14px 20px; }
       .nav-links a { margin-left: 18px; font-size: 13px; }
@@ -705,7 +670,6 @@
 
   <canvas id="bgCanvas"></canvas>
 
-  <!-- NAV -->
   <nav id="navbar">
     <div class="nav-logo">AA</div>
     <div class="nav-links">
@@ -716,7 +680,6 @@
     </div>
   </nav>
 
-  <!-- HERO -->
   <header>
     <div class="hero-glow"></div>
 
@@ -746,7 +709,6 @@
     </div>
   </header>
 
-  <!-- ABOUT -->
   <section id="about">
     <div class="reveal">
       <p class="section-label">Who I Am</p>
@@ -763,15 +725,15 @@
       </p>
 
       <div class="stats-grid">
-        <div class="stat-box reveal">
+        <div class="stat-box">
           <div class="number">3+</div>
           <div class="label">Projects Completed</div>
         </div>
-        <div class="stat-box reveal">
+        <div class="stat-box">
           <div class="number">10+</div>
           <div class="label">Skills Developed</div>
         </div>
-        <div class="stat-box reveal">
+        <div class="stat-box">
           <div class="number">100%</div>
           <div class="label">Passion for BA Work</div>
         </div>
@@ -779,7 +741,6 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
   <section id="skills">
     <div class="reveal">
       <p class="section-label">What I Know</p>
@@ -801,7 +762,6 @@
     </div>
   </section>
 
-  <!-- PROJECTS -->
   <section id="projects">
     <div class="reveal">
       <p class="section-label">What I've Built</p>
@@ -809,22 +769,17 @@
       <div class="section-divider"></div>
     </div>
 
-    <!-- Project 1 -->
     <div class="project-card reveal">
       <div class="project-number">01</div>
-
       <h3><span>Rideshare Driver</span> Income Optimization Analysis</h3>
-
       <div class="info-block">
         <div class="info-label">Problem</div>
         <p>Rideshare drivers often experience inconsistent income because of downtime, inefficient shift planning, peak-hour dependency, changing demand zones, fuel costs, and limited visibility into earning patterns.</p>
       </div>
-
       <div class="info-block">
         <div class="info-label">Objective</div>
         <p>Identify the key factors affecting driver income and recommend process improvements to increase daily earnings, reduce idle time, and improve utilization.</p>
       </div>
-
       <div class="info-block">
         <div class="info-label">BA Approach</div>
         <ul>
@@ -835,7 +790,6 @@
           <li>Defined KPIs to measure income performance and efficiency.</li>
         </ul>
       </div>
-
       <div class="info-block">
         <div class="info-label">Key Insights</div>
         <ul>
@@ -845,7 +799,6 @@
           <li>Better shift planning can improve consistency without increasing total work hours.</li>
         </ul>
       </div>
-
       <div class="info-block">
         <div class="info-label">KPIs Defined</div>
         <ul>
@@ -856,7 +809,6 @@
           <li>Fuel Cost as a Percentage of Earnings</li>
         </ul>
       </div>
-
       <div class="info-block">
         <div class="info-label">Recommendations</div>
         <ul>
@@ -866,12 +818,10 @@
           <li>Use weekly performance tracking to improve driving strategy.</li>
         </ul>
       </div>
-
       <div class="info-block">
         <div class="info-label">Outcome</div>
         <p>Proposed a data-driven shift planning approach that can improve income consistency, reduce wasted time, and support better decision making for rideshare drivers in Melbourne.</p>
       </div>
-
       <div class="tags-row">
         <span class="tag">Business Case</span>
         <span class="tag">KPI Analysis</span>
@@ -880,22 +830,17 @@
       </div>
     </div>
 
-    <!-- Project 2 -->
     <div class="project-card reveal">
       <div class="project-number">02</div>
-
       <h3><span>Login System</span> Requirements &amp; User Flow Analysis</h3>
-
       <div class="info-block">
         <div class="info-label">Problem</div>
         <p>Users may face login failures, unclear error messages, and poor account recovery options, which can lead to frustration, support requests, and user drop-off.</p>
       </div>
-
       <div class="info-block">
         <div class="info-label">Objective</div>
         <p>Define clear requirements for a simple, secure, and user-friendly login experience.</p>
       </div>
-
       <div class="info-block">
         <div class="info-label">Functional Requirements</div>
         <ul>
@@ -905,7 +850,6 @@
           <li>System displays clear error messages for invalid login attempts.</li>
         </ul>
       </div>
-
       <div class="info-block">
         <div class="info-label">Non-Functional Requirements</div>
         <ul>
@@ -915,12 +859,10 @@
           <li>The system should be reliable and available during peak usage.</li>
         </ul>
       </div>
-
       <div class="info-block">
         <div class="info-label">User Story</div>
         <p><em>As a registered user, I want to log in securely so that I can access my account without issues.</em></p>
       </div>
-
       <div class="info-block">
         <div class="info-label">Acceptance Criteria</div>
         <ul>
@@ -929,12 +871,10 @@
           <li>Given a forgotten password, when the user requests reset, then a reset link is sent to the registered email.</li>
         </ul>
       </div>
-
       <div class="info-block">
         <div class="info-label">Outcome</div>
         <p>Created a clear requirement structure that improves usability, reduces login confusion, and supports better communication between business stakeholders and developers.</p>
       </div>
-
       <div class="tags-row">
         <span class="tag">BRD</span>
         <span class="tag">User Stories</span>
@@ -943,22 +883,17 @@
       </div>
     </div>
 
-    <!-- Project 3 -->
     <div class="project-card reveal">
       <div class="project-number">03</div>
-
       <h3><span>Customer Support</span> Process Improvement</h3>
-
       <div class="info-block">
         <div class="info-label">Problem</div>
         <p>Support tickets can reopen after closure when the root cause is not fully resolved, communication is unclear, or closure criteria are not properly defined.</p>
       </div>
-
       <div class="info-block">
         <div class="info-label">Objective</div>
         <p>Improve the support workflow to reduce reopened tickets, improve SLA tracking, and create a clearer resolution process for users and support teams.</p>
       </div>
-
       <div class="info-block">
         <div class="info-label">BA Approach</div>
         <ul>
@@ -968,7 +903,6 @@
           <li>Suggested improvement areas for tracking, communication, and escalation.</li>
         </ul>
       </div>
-
       <div class="info-block">
         <div class="info-label">Recommendations</div>
         <ul>
@@ -978,12 +912,10 @@
           <li>Create escalation rules for repeated issues.</li>
         </ul>
       </div>
-
       <div class="info-block">
         <div class="info-label">Outcome</div>
         <p>Proposed a more structured support process to improve service quality, reduce repeated work, and increase customer satisfaction.</p>
       </div>
-
       <div class="tags-row">
         <span class="tag">AS-IS / TO-BE</span>
         <span class="tag">Root Cause Analysis</span>
@@ -994,7 +926,6 @@
 
   </section>
 
-  <!-- CONTACT -->
   <section id="contact">
     <div class="reveal">
       <p class="section-label">Get In Touch</p>
@@ -1004,17 +935,17 @@
 
     <div class="contact-grid reveal">
       <a class="contact-card" href="mailto:akshayagalduty93@gmail.com">
-        <span class="contact-icon">✉️</span>
+        <span class="contact-icon">&#9993;</span>
         <div class="contact-type">Email</div>
         <div class="contact-value">akshayagalduty93@gmail.com</div>
       </a>
       <a class="contact-card" href="https://www.linkedin.com/in/akshayagalduty21" target="_blank">
-        <span class="contact-icon">💼</span>
+        <span class="contact-icon">&#128188;</span>
         <div class="contact-type">LinkedIn</div>
         <div class="contact-value">linkedin.com/in/akshayagalduty21</div>
       </a>
       <a class="contact-card" href="https://github.com/akshayagalduty93" target="_blank">
-        <span class="contact-icon">🐙</span>
+        <span class="contact-icon">&#128025;</span>
         <div class="contact-type">GitHub</div>
         <div class="contact-value">github.com/akshayagalduty93</div>
       </a>
@@ -1022,23 +953,21 @@
   </section>
 
   <footer>
-    <p>© 2026 <span>Akshay Agalduty</span> &nbsp;|&nbsp; Business Analyst Portfolio</p>
+    <p>&#169; 2026 <span>Akshay Agalduty</span> &nbsp;|&nbsp; Business Analyst Portfolio</p>
   </footer>
 
   <script>
-    // ── PROFILE IMAGE FALLBACK ──
-    const profileImage = document.getElementById("profileImage");
-    const profileFallback = document.getElementById("profileFallback");
+    var profileImage = document.getElementById("profileImage");
+    var profileFallback = document.getElementById("profileFallback");
 
-    profileImage.onerror = function () {
+    profileImage.onerror = function() {
       profileImage.style.display = "none";
       profileFallback.style.display = "flex";
     };
 
-    // ── PARTICLE CANVAS ──
-    const canvas = document.getElementById("bgCanvas");
-    const ctx = canvas.getContext("2d");
-    let particles = [];
+    var canvas = document.getElementById("bgCanvas");
+    var ctx = canvas.getContext("2d");
+    var particles = [];
 
     function resize() {
       canvas.width = window.innerWidth;
@@ -1059,30 +988,35 @@
       };
     }
 
-    for (let i = 0; i < 90; i++) particles.push(createParticle());
+    for (var i = 0; i < 90; i++) {
+      particles.push(createParticle());
+    }
 
     function drawParticles() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      particles.forEach(p => {
+
+      for (var i = 0; i < particles.length; i++) {
+        var p = particles[i];
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(${p.color},${p.alpha})`;
+        ctx.fillStyle = "rgba(" + p.color + "," + p.alpha + ")";
         ctx.fill();
         p.x += p.dx;
         p.y += p.dy;
         if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-      });
+      }
 
-      // draw connecting lines
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+      for (var i = 0; i < particles.length; i++) {
+        for (var j = i + 1; j < particles.length; j++) {
+          var dx = particles[i].x - particles[j].x;
+          var dy = particles[i].y - particles[j].y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < 120) {
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(255,107,43,${0.08 * (1 - dist / 120)})`;
+            ctx.strokeStyle = "rgba(255,107,43," + (0.08 * (1 - dist / 120)) + ")";
             ctx.lineWidth = 0.6;
             ctx.stroke();
           }
@@ -1093,22 +1027,29 @@
     }
     drawParticles();
 
-    // ── NAVBAR SCROLL ──
-    window.addEventListener("scroll", () => {
-      document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 50);
+    window.addEventListener("scroll", function() {
+      var nav = document.getElementById("navbar");
+      if (window.scrollY > 50) {
+        nav.classList.add("scrolled");
+      } else {
+        nav.classList.remove("scrolled");
+      }
     });
 
-    // ── SCROLL REVEAL ──
-    const revealEls = document.querySelectorAll(".reveal, .reveal-left");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, i) => {
+    var revealEls = document.querySelectorAll(".reveal");
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry, i) {
         if (entry.isIntersecting) {
-          setTimeout(() => entry.target.classList.add("visible"), i * 80);
+          setTimeout(function() {
+            entry.target.classList.add("visible");
+          }, i * 80);
         }
       });
     }, { threshold: 0.1 });
 
-    revealEls.forEach(el => observer.observe(el));
+    revealEls.forEach(function(el) {
+      observer.observe(el);
+    });
   </script>
 
 </body>
